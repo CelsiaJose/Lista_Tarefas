@@ -63,7 +63,7 @@
 }
 
 .flex-linha{
-    display: flex;
+    display: grid;
 }
 h1{
     margin-bottom: 10%;
@@ -86,14 +86,38 @@ h1{
 
 /*Agora vamos trabalhar nos icones adiconados*/
 
+.itens{
+    background: black;
+    height: 25px;
+    display: flex;
+    
+    
+}
+
 .elemento{
     background: rgb(0, 255, 34);
-    width: 300px;
+    width: 250px;
     margin-left: 5px;
     
 }
-.iconeadd{
+.div_iconeadd{
   
     background: blue;
     width: 70px;
 }
+.div_iconerem{
+    background: gray;
+    width: 70px;
+}
+.tarefa {
+    display: flex;
+    background: black;
+    height: 25px;
+    display: flex; 
+    
+   
+  }
+  .addmais{
+    display: none
+
+  }

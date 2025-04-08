@@ -47,10 +47,10 @@
                   </div>
                   
                   <button id="btnAdicionar"><i class="mdi mdi-plus-circle-outline"></i>adicionar mais</button>
-                  <div class="flex-linha">
-                    <input type="text" id="newitem">
-                    <button id="btnsalvar" onclick="salvaritem()">salvar</button>
-                  </div>
+                    <div id ="addmais" class="flex-linha addmais">
+                      <input type="text" id="newitem">
+                      <button id="btnsalvar" onclick="salvaritem()">salvar</button>
+                    </div>
                   
                 </ul>
                 </a>
@@ -59,9 +59,16 @@
 
             <section class="list-adicionado">
                 <p>Lista adicionada</p>
-                <div id="itens_adicionandos" class="flex-linha">
-                  <div id="elemento" class="elemento">elemento</div>
-                  <div id="iconeadd" class="iconeadd">icone</div>
+                
+                <div id="itens_adicionandos" class="flex-linha itens_adicionandos" >
+                 <!---- <div id="elemento" class="elemento"></div>
+                  <div id="div_iconeadd" class="div_iconeadd">
+                    <i id="iconeadd"></i>
+                  </div>
+                  <div id="div_iconerem" class="div_iconerem">
+                    <i id="iconerem"></i>
+                  </div>
+                -->
                 </div>
             </section>
             
@@ -70,51 +77,22 @@
 
     <div class="footer">
         
-        <div class="container">
-            <footer class="row row-cols-5 py-5 my-5 border-top">
-              <div class="col">
-                <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
-                  <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-                </a>
-                <p class="text-muted">© 2021</p>
-              </div>
-          
-              <div class="col">
-          
-              </div>
-          
-              <div class="col">
-                <h5>Section</h5>
-                <ul class="nav flex-column">
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-                </ul>
-              </div>
-          
-              <div class="col">
-                <h5>Section</h5>
-                <ul class="nav flex-column">
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-                </ul>
-              </div>
-          
-              <div class="col">
-                <h5>Section</h5>
-                <ul class="nav flex-column">
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-                </ul>
-              </div>
+      <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+              <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Company, Inc</span>
+          </div>
+      
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+            <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+          </ul>
+        </footer>
+      </div>
             </footer>
           </div>
 

@@ -4,21 +4,90 @@ document.getElementById("icone").addEventListener("click", function() {
     lista.style.display = (lista.style.display === "block") ? "none" : "block";
 });
 
+let qtd = 0;
+let itens_adicionandos=document.getElementById("itens_adicionandos")
+
 function adicionarEventosAosItens() {
-    //let itens = document.querySelectorAll(".menu-itens li"); como eu fazia
-    let itens = document.querySelectorAll("#newli li"); // Seleciona todos os <li> da lista
+    let itens = document.querySelectorAll("#newli li");//serquilha devido a estar já aí
 
     itens.forEach(i => {
         i.addEventListener("click", function () {
-            console.log("Item clicado:", this.textContent);
+            qtd++;            
+            
+            if(qtd<20){
+             
+                 const itens=document.createElement("div")
+                 itens.className = 'flex-linha itens';
+                 itens.id = `itens-${qtd}`
+
+                   //1-Texto clicado
+                 const div_elemento = document.createElement('div');//Criando o elemento
+                 div_elemento.className = 'elemento'//Criando a class 
+                 div_elemento.id = `elemento-${qtd}`//Criando o id e a posicao
+                 div_elemento.textContent=this.textContent
+                
+
+                //2-elemento check blanck
+
+                let div_iconeadd=document.createElement("div")
+                div_iconeadd.className = 'div_iconeadd'
+                div_iconeadd.id="div_iconeadd"
+                div_iconeadd.id="div_iconeadd_" +qtd
+                
+                let iconeadd=document.createElement("i")
+                iconeadd.classList.add("mdi", "mdi-checkbox-blank-outline"); 
+                iconeadd.id = "iconeadd";  
+                iconeadd.id = "iconeadd_" + qtd //No html fica class iconeadd_1
+                div_iconeadd.appendChild(iconeadd)
+
+                iconeadd.onclick=function(){
+                    marcarTarefa(this.id)
+                }
+
+                //3-apagar
+                let div_iconerem=document.createElement("div");
+                div_iconerem.className="div_iconerem"
+                div_iconerem.id="div_iconerem"
+
+                let iconerem=document.createElement("i");
+                iconerem.classList.add("mdi","mdi-delete"); 
+                iconerem.id = "iconerem"          // outra forma que ja junta os dois  iconeRem.id = `iconerem-${contador}`
+                iconerem.id = "iconerem_" + qtd
+
+                div_iconerem.appendChild(iconerem)
+
+
+                iconerem.onclick=function(){
+                    
+                    deletar(itens.id)
+                    
+                }
+                // Adiciona os elementos ao novo container
+                itens.appendChild(div_elemento);
+                itens.appendChild(div_iconeadd);
+                itens.appendChild(div_iconerem);
+                // Adiciona os elementos ao novo container
+                itens_adicionandos.appendChild(itens);
+
+            }
+            else{
+                console.log("voce atingiu o numero de tarefas diárias"+ qtd)
+            }   
+           
         });
     });
 }
 
-//mostrar imput para inserir mais valores
-function addmais(){
+//Fexado
 
-}
+//mostrar imput para inserir mais valores
+
+document.getElementById("btnAdicionar").addEventListener("click", function() {
+    let addmais = document.getElementById("addmais");
+    addmais.style.display = (addmais.style.display === "block") ? "none" : "block";
+});
+    
+
 
 
 // Para salvar os itens e adiciona-los na lista dos itens.
@@ -33,56 +102,36 @@ function salvaritem()
     //evitar espaços vazios // versao 1 e 2
     if((valor!=="") && (valor!==null) && (valor!==undefined))
     {
-        // isto foi transformado nisto
-       /* let li = document.createElement("li");
-        let a = document.createElement("a");
-        a.href = "#";
-        a.textContent = valor;
-
-        // Adiciona o link ao <li>
-        li.appendChild(a);*/
-        //1 alteração
-        //Criaremos li e a ao inves desta forma com o innerhtml
-         /*let newvalor =`<li><a  href="#">${valor}</a></li>`
-         newli.innerHTML += newvalor*/
-          // 1.2 alterado Criando um novo <li> e <a> dinamicamente
+        
         let li = document.createElement("li");
         let a = document.createElement("a");
-        a.href = "#"; //adicionar um atributo a tag a 
-        a.textContent = valor; // ${valor} subistitui 
-        //Até agora ainda so recriamos falta o newli.innerHTML += newvalor*/
-        //O innerhtml recria a lista o que ñ pode ser ligal pois altera todos os eventos antes ja criados
-        li.appendChild(a); //adiciona o o a a li ou seja o a dentro do li aconforme as variaveis pois 
-        //até agora só tinhamos criado e ñ feito nada 
-        //agora vamos adicionalos a novalista
-        newli.appendChild(li) //newli.innerHTML += newvalor*/ apenas adiciona um item pois eu ja os acupleios
-        //agora adiciono evento de click a lista ao li pois o item ja foi criado
-        adicionarEventosAosItens()  // Chama a função para garantir que TODOS os itens tenham o evento de clique
-        
+        a.href = "#"; 
+        a.textContent = valor; 
+        li.appendChild(a); 
+        newli.appendChild(li) 
+        adicionarEventosAosItens()  // Chama a função para garantir que TODOS os itens tenham o evento de clique   
         input.value = "";  
     }
 } 
 adicionarEventosAosItens() //adiciona os eventos
  
-//Mandar os itens clicados na área da adicao.
-function moveritens(){
+
+//este icone vai aparecer mas apenas quando o evento listem acontece boas
+function marcarTarefa(id){//funcao a ser chamada no icone quadrado  Ela marca por id e elimina pelo qtd ou seja  a tarefa selecionada
+    let item = document.getElementById(id); // Busca o ícone pelo ID único
+
+    // Alterna entre checkbox marcado e desmarcado
+    if (item.classList.contains("mdi-checkbox-blank-outline")) {
+        item.classList.remove("mdi-checkbox-blank-outline");
+        item.classList.add("mdi-checkbox-marked-outline");
+    } else {
+        item.classList.remove("mdi-checkbox-marked-outline");
+        item.classList.add("mdi-checkbox-blank-outline");
+    }
+}
+function deletar(id) {
+    let tarefa = document.getElementById(id); // Ícone clicado
+    tarefa.remove() // Encontra a div mais próxima com a classe .tarefa
 
 }
 
-//Como estudo
-/*function moveritens(){
-   itens = document.querySelectorAll(".menu-itens li")
-
-    itens.forEach(i => {
-   
-    
-        i.addEventListener("click", function() {
-            console.log(this.textContent);
-        
-        })
-         // Exibe o texto de cada item da lista
-    
-    });
-    
-
-}*/
