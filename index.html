@@ -26,40 +26,46 @@
     </div>
     <section class="main">
         <header class="titulo">
-            <h1>Minhas Tarefas Diárias</h1></header>
+            <h1  class="piscar_vermelho">Minhas Tarefas Diárias</h1></header>
         <section class="content">
             
             <section class="section-img">
-                <figure><img src="assets/img/logo.jpg" alt="Logo do site" class="logo img-fluid"></figure>
+                <figure><img src="assets/img/logo.png" alt="Logo do site" class="logo img-fluid"></figure>
             </section>
             <section class="list-adicionar">
-              <div class="flex-linha">
-                <a href="#">Itens
-                  <svg id="icone" width="8" height="5" fill="none">
-                    <path d="M0.809756 0.860637L3.23708 3.40029C3.42325 3.59507 3.73028 3.60731 3.93136 3.42795L6.80957 0.860638" stroke="#676879" stroke-width="1.3" stroke-linecap="round">
-                    </path>
-                  </svg>
-                <ul id="arealista" class="menu-itens">
-                  <div id="newli">
-                    <li><a href="#">Devocional</a></li>
-                    <li><a href="#">Exercício</a></li>
-                    <li><a  href="#">Estudar</a></li>
-                  </div>
-                  
-                  <button id="btnAdicionar"><i class="mdi mdi-plus-circle-outline"></i>adicionar mais</button>
-                    <div id ="addmais" class="flex-linha addmais">
-                      <input type="text" id="newitem">
-                      <button id="btnsalvar" onclick="salvaritem()">salvar</button>
-                    </div>
-                  
-                </ul>
-                </a>
-              </div>               
+              <section class="list_only_list">
+                <div id="" class="flex-linha itens_div">
+                  <a class="itens_a">
+                    <span class="text_itens">Itens
+                      <svg id="icone" width="12" height="12" fill="none">
+                        <path d="M0.809756 0.860637L3.23708 3.40029C3.42325 4.59507 3.73028 3.60731 3.93136 3.42795L6.80957 0.860638" stroke="#676879" stroke-width="2.9" stroke-linecap="round" >
+                        </path>
+                      </svg>
+                    </span>
+                    <ul id="arealista" class="menu-itens">
+                      <div id="newli">
+                        <li><a href="#">Devocional</a></li>
+                        <li><a href="#">Exercício</a></li>
+                        <li><a  href="#">Estudar</a></li>
+                      </div>
+                      
+                      <button id="btnAdicionar" class="btnAdicionar"><span><img class="plus-circle-outline" src="https://img.icons8.com/arcade/64/plus.png" alt="plus"/>Itens</span></button>
+                      <div id ="addmais" class="addmais flex-linha1">
+                        <input type="text" id="newitem" class="inpt1" placeholder="Add Item">
+                        <button id="btnsalvar" onclick="salvaritem()"><span><i class="mdi mdi-content-save" style="font-size: 24px;"></i></span></button>
+                      </div>
+                      
+                    </ul>
+                  </a>
+                </div>
+              </section>               
             </section>
 
+            
             <section class="list-adicionado">
-                <p>Lista adicionada</p>
-                
+                <h2 id="titulo" class="list-only-adding">Tarefas de Hoje</h2>
+                <div class="data" id="data"></div>
+                <p id="tarFeita"></p>
                 <div id="itens_adicionandos" class="flex-linha itens_adicionandos" >
                  <!---- <div id="elemento" class="elemento"></div>
                   <div id="div_iconeadd" class="div_iconeadd">
@@ -83,13 +89,19 @@
             <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
               <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
             </a>
-            <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Company, Inc</span>
+            <span class="mb-3 mb-md-0 text-body-secondary" style="color: black !important;">© 2025 Celsia José</span>
           </div>
       
-          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-            <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-            <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+          <ul class="nav justify-content-end " style="display: grid;">
+            <li class="ms-3"><a class="text-body-secondary" href="https://www.instagram.com/celsiasilv/">Instagran</a>
+              <img width="30" height="30" src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="instagram-new--v1" class="social-1"/>
+            </li>
+            <li class="ms-3"><a class="text-body-secondary" href="https://www.linkedin.com/in/celsia-jos%C3%A9-68b527217/">Linkdin </a>
+              <img width="30" height="30" src="https://img.icons8.com/fluency/50/linkedin.png" alt="linkedin" class="social-2"/>
+            </li>
+            <li class="ms-3"><a class="text-body-secondary" href="https://www.linkedin.com/in/celsia-jos%C3%A9-68b527217/">facebook</a>
+              <img width="30" height="30" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new" class="social-3"/>
+            </li>
           </ul>
         </footer>
       </div>
